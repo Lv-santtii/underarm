@@ -1,0 +1,991 @@
+body {
+    font-family: 'Anton', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #e9e6e6;
+}
+
+.promo {
+    text-align: center;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 70%;
+    font-weight: 100;
+}
+
+.top {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.calz{
+    color: white;
+}
+
+.navlogo {
+    margin-left: 7%;
+    margin-top: 1%;
+    height: 100%;
+    width: 10vh;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    height: fit-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navitems {
+    font-size: 25px;
+    margin-top: 0.5%;
+    display: flex;
+    gap: 10%;
+    white-space: nowrap;
+}
+
+.item1:hover,
+.item2:hover,
+.item3:hover,
+.cartnav:hover {
+    transform: scale(1.3);
+
+    border-bottom: 1px solid black;
+}
+
+.navlogo:hover {
+    transform: scale(1.3);
+}
+
+.item1,
+.item2,
+.item3,
+.navlogo {
+    transition: 0.5s;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.imgprincipal {
+    margin-top: 8%;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cat {
+    text-align: center;
+    margin-top: 3%;
+    font-size: 4vh;
+}
+
+.card {
+    border: 1px solid #c2bebe;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: 1s ease;
+    background-color: #f7f2f2;
+    height: 36em;
+
+}
+
+.cardsmid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 4em;
+    width: 80%;
+    margin-left: 10%;
+}
+
+
+.imgcard {
+    padding-left: 0;
+}
+
+.botoncards {
+    background: #000000;
+    border-radius: 999px;
+    box-shadow: #000000 0 10px 20px -10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 23px;
+    font-weight: 700;
+    color: white;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    margin-top: 0;
+    transition: 0.6s ease;
+    width: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.envio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.envioimg{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.envioh2 {
+    font-weight: 500;
+}
+
+.ad1 {
+    margin-top: 15%;
+}
+
+.ad1div {
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.h2off{
+    font-size: 3em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.ofantes{
+    color:#8a8484;
+    margin-top: 01%;
+}
+
+.megasale{
+    color: red;
+    font-size: 3em;
+    margin-top: 0.5em;
+}
+
+.h2of{
+    font-size: 1.5em;
+    margin-top: 0;
+    font-weight: 100;
+}
+
+.precioyadd{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.carrito{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+    transition: 0.5s ease;
+    padding-left: 2%;
+}
+
+.carrito:hover{
+    transform: scale(1.4);
+}
+
+.cartnav{
+    display: flex;
+    margin-top: 2%;
+    font-size: 2em;
+    transition: 1s ease;
+
+}
+
+.cartnav:hover{
+    border: none;
+}
+
+.botoncards:hover{
+    background-color: #4caf50;
+    border: none;
+}
+
+@media only screen and (max-width: 1287px){
+        .cardsmid{
+            flex-direction: column;
+        }
+
+        .card{
+            width: 70%;
+            height: max-content;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    @media only screen and (max-width: 1287px){
+        .envioimg{
+            width: 40vh;
+        }
+    }
+
+    @media only screen and (max-width: 1009px){
+        
+    }
+
+    body{
+        margin:0;
+        overflow-x:hidden;
+        }
+        
+        .footer {
+            background: #000;
+            padding: 30px 0px;
+            font-family: 'Play', sans-serif;
+            text-align: center;
+            margin-top: 5%;
+        }
+        
+        .footer .row {
+            width: 100%;
+            margin: 1% 0%;
+            padding: 0.6% 0%;
+            color: gray;
+            font-size: 0.8em;
+        }
+        
+        .footer .row a {
+            text-decoration: none;
+            color: gray;
+            transition: 0.5s;
+        }
+        
+        .footer .row a:hover {
+            color: #fff;
+        }
+        
+        .footer .row ul {
+            width: 100%;
+        }
+        
+        .footer .row ul li {
+            display: inline-block;
+            margin: 0px 30px;
+        }
+        
+        .footer .row a i {
+            font-size: 2em;
+            margin: 0% 1%;
+        }
+        
+        @media (max-width:720px) {
+            .footer {
+                text-align: left;
+                padding: 5%;
+            }
+        
+            .footer .row ul li {
+                display: block;
+                margin: 10px 0px;
+                text-align: left;
+            }
+        
+            .footer .row a i {
+                margin: 0% 3%;
+            }
+        }
+        
+
+        *{
+            font-family:  'Anton', sans-serif;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+         .aa{
+            text-decoration: none;
+            color: black;
+        }
+
+.navitems{
+    margin-right: 5em;
+}
+
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }   
+
+        @media only screen and (max-width: 570px) {
+            .navitems{
+                font-size: 1em;
+                margin-right: -10em;
+            }
+            .navlogo{
+                width: 7vh;
+            }
+        }
+
+        @media only screen and (max-width: 1800px) and (min-width:741px){
+            .navitems{
+                margin-right: 8em;
+            }
+            
+        }
+
+        
+        @media only screen and (max-width: 925px) and (min-width:773px){
+            .navitems{
+                font-size: 1em;
+            margin-right: 17em;            }
+        }
+
+        @media only screen and (max-width: 1800px) and (min-width:926px){
+            .navitems{
+                font-size: 1.5em;
+            margin-right: 19.5em;            }
+        }
+
+        @media only screen and (max-width: 739px) and (min-width:306px){
+            .navitems{
+                margin-right: 17em;
+            font-size: 1em;
+            }
+        }
+
+        .calz{
+            color: white;
+        }
+
+        @media only screen and (max-width: 380px){
+            .navitems{
+                margin-right: 10em;
+                font-size: 0.9em;
+            }
+        }
+
+        @media only screen and (max-width: 1700px) and (min-width: 940){
+            .navitems{
+                margin-right: 5em;
+            }
+        }
+        @media only screen and (min-width: 1800px){
+            .navlogo{
+                margin-left: 5em;
+            }
+            
+        }
+
+        @media only screen and (max-width: 1800px){
+            
+        }
+
+        @media only screen and (max-width: 435px) and (min-width: 0px){
+            
+
+            .nav{
+                max-width: 100vh;
+            }
+
+        }
+
+        .carrito{
+            font-size: 1em;
+            padding-left: 0;
+        }
+
+        
+        @media only screen and (max-width: 380px){
+            .navitems{
+                margin-right: 10em;
+                font-size: 0.9em;
+            }
+        }
+        @media only screen and (max-width: 1700px) and (min-width: 940){
+            .navitems{
+                margin-right: 5em;
+            }
+        }
+
+        @media only screen and (min-width: 1800px){
+            .navlogo{
+                margin-left: 5em;
+            }
+        }
+
+        
+        @media only screen and (max-width: 570px) {
+            .navitems{
+                font-size: 1em;
+            }
+            .navlogo{
+                width: 7vh;
+            }
+        }
+
+        @media only screen and (max-width: 1800px) and (min-width:741px){
+            .navitems{
+                margin-right: 8em;
+                
+            margin-right: 15em;    
+            }
+        }
+
+        
+        @media only screen and (max-width: 925px) and (min-width:773px){
+            .navitems{
+                font-size: 1em;
+            margin-right: 17em;            }
+        }
+
+        @media only screen and (max-width: 1800px) and (min-width:926px){
+            .navitems{
+                font-size: 1.5em;
+            margin-right: 8em;          }
+        }
+
+        @media only screen and (max-width: 739px) and (min-width:306px){
+            .navitems{
+                margin-right: 12em;
+            font-size: 1em;
+            }
+        }
+
+        .calz{
+            color: white;
+        }
+
+        @media only screen and (max-width: 380px){
+            .navitems{
+                margin-right: 10em;
+                font-size: 0.9em;
+            }
+        }
+        @media only screen and (max-width: 1700px) and (min-width: 940){
+            .navitems{
+                margin-right: 5em;
+            }
+        }
+
+        @media only screen and (min-width: 1800px){
+            .navlogo{
+                margin-left: 5em;
+            }
+        }
+
+        @media only screen and (max-width: 485px) and (min-width: 0px){
+            
+
+            .navitems{
+                margin-right: 7.5em;
+            }
+        }
+
+        .carrito{
+            font-size: 2em;
+        }
+
+       
+
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.producto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+#carrito {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    float: right;
+}
+
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrito li {
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+}
+
+#total {
+    font-weight: bold;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+/* Agrega estos estilos al final de tu CSS */
+#carrito {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: white;
+    z-index: 1000;
+    overflow-y: auto;
+    border-left: 1px solid #ddd;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #carrito.abierto {
+    transform: translateX(0);
+  }
+  
+  #lista-carrito li {
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    list-style: none;
+  }
+  
+
+  #carrito {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: black;
+    z-index: 1000;
+    color: white;
+    overflow-y: auto;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+  #lista-carrito li {
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    list-style: none;
+  }
+
+  .btnvaciar{
+    background-color: white;
+    border-radius: 100px;
+    color: black;
+    margin-top: 2em;
+    width: 15em;
+    font-size: 1em;
+    
+    transition:  1s ease;
+  }
+
+  .btnvaciar:hover{
+    background-color: red;
+    
+  }
+
+  .bx-x{
+    font-size: 4em;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+      transition: color 0.3s, transform 0.3s;
+      margin-top: 0.5em;
+  }
+
+  .bx-x:hover {
+    color: red;
+    background-color: black;
+    transform: rotate(90deg);
+  }
+
+  .cartnav{
+    cursor: pointer;
+  }
+
+  .btnvaciar:hover {
+    background-color: red;
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 485px) and (min-width: 0px){
+    
+
+    .navitems{
+        margin-right: 7em;
+    }
+
+
+    .promo{
+        width: 51vh;
+        margin: 0;
+    }
+}@media only screen and (max-width: 1800px) and (min-width:926px){
+    .navitems{
+        font-size: 1.5em;
+    margin-right: 15em;          }
+}
+
+
+@media screen and (max-width:845px) {
+    
+.imgprincipal{
+    max-width: 30em;
+    height: fit-content;
+    margin-top: 5em;
+
+}
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw; /* Puedes ajustar esto según sea necesario */
+}
+
+.top {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: white; /* Agregado para ajustar el fondo del encabezado */
+}
+
+.imgprincipal{
+    width: 100vw;
+}
+
+
+body{
+    width: 100vw;
+}
+
+.midd{
+    width: 100vw;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#lista-carrito button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#lista-carrito li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    list-style: none;
+}
+
+#lista-carrito button { /* Puedes personalizar el color de fondo según tu diseño */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    background-color: transparent;
+    font-size: 0.6em;
+    margin-top: -2EM;
+}
+
+.nav-link{
+    font-size: 1.5em;
+}
+
+#prom{
+    font-size: 2em;
+    margin-top: 0.5em;
+}
+
+.roww{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    display: inline-block;
+}
+
+.login-register-container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-form,
+.register-form {
+    display: none;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+
+.login-register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.login-register-container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-form,
+.register-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.btncerrarmenus {
+    margin-top: 10px;
+}
+
+.log{
+    flex-direction: column;
+}
+
+.submit{
+    background-color: black;
+}
+
+.button2 {
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+  }
+
+  .button2:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+  
+  .button2:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 100%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #009087;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:hover {
+    color: #ffffff;
+    border: 1px solid #009087;
+  }
+  
+  .button2:hover:before {
+    top: -35%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button2:hover:after {
+    top: -45%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+.login-register-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.loginbuttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 30em;
+}
+
+.cerrar{
+    width: 40%;
+}
+
+.cerrarbtn{
+    margin-top: 0em;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.submitdiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5em;
+}
+#bienvenida{
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+  }
+
+  #formularioSubidaProducto {
+    background-color: #e9e6e6;
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  #formularioSubidaProducto input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+
+  #formularioSubidaProducto button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  @media screen and (max-width: 480px) {
+    #formularioSubidaProducto {
+      max-width: 100%;
+    }
+  }
