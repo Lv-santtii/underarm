@@ -1,4 +1,3 @@
-// Declaro todas las const necesarias para el correcto funcionamiento del codigo //
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -13,7 +12,8 @@ const { z } = require('zod');
 
 const app = express();
 const server = http.createServer(app);
-const port = 3000;
+const port = process.env.PORT || 8080; // Utiliza el puerto proporcionado por el entorno o el 3000 si no está definido
+
 // Llamada al middleware que se encarga de avisar por consola cuando hay una entrada a uno de los HTML //
 app.use(authMiddleware);
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,7 +27,7 @@ app.use(session({
   cookie: { secure: false }, // Ajusta según tus necesidades de seguridad
 }));
 
-//Url para conectarse a la Base de datos de Mongo //
+// Url para conectarse a la Base de datos de Mongo //
 mongoose.connect('mongodb+srv://santi2006:Santi2006@cluster0.0grnbd5.mongodb.net/?retryWrites=true&w=majority');
 // Conexion a los archivos estaticos para que se vea correctamente //
 app.use(express.static(path.join(__dirname, 'app', 'views')));
@@ -35,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'app', 'views')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'app', 'views', 'index.html'));
 });
+
 // Codigo pra el registro de nuevos usuarios //
 app.post('/register', async (req, res) => {
   try {
@@ -147,3 +148,5 @@ const productoSchema = z.object({
 app.listen(port, () => {
   console.log(`Servidor ON en el puerto ${port}`);
 });
+
+module.exports = { app, server };
