@@ -1,3 +1,4 @@
+// Declaracion de los productos necesarios //
 const productos = [
   //Calzado
   { id: 1, nombre: 'Zapatillas Flow Velocity para hombre', precio: 72499 },
@@ -71,10 +72,10 @@ const productos = [
   { id: 67, nombre: 'Riñonera de running UA Flex', precio: 19999 },
   { id: 68, nombre: 'Guante Under Armour Light Training', precio: 69999 },
 ];
-
+// Codigo para el funcionamiento del carrito de compras //
 const carrito = [];
 let carritoAbierto = false;
-
+// Funcion de agregar al carrito //
 function agregarAlCarrito(productoId) {
   const productoSeleccionado = productos.find(producto => producto.id === productoId);
 
@@ -111,7 +112,7 @@ function actualizarCarrito() {
   });
 
   totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
-
+  // Eliminacion de productos en la lista //
   const botonesEliminar = document.querySelectorAll(".eliminar-producto");
   botonesEliminar.forEach(boton => {
     boton.addEventListener("click", function () {
@@ -135,13 +136,13 @@ function eliminarProducto(boton) {
     actualizarCarrito();
   }
 }
-
+// Funcion para desplegar el menu del carrito //
 function abrirCarrito() {
   const carritoContainer = document.getElementById('carrito');
   carritoAbierto = true;
   carritoContainer.style.transform = 'translateX(0)';
 }
-
+// Funcion para cerrar el menu del carrito //
 function cerrarCarrito() {
   const carritoContainer = document.getElementById('carrito');
   carritoAbierto = false;
@@ -158,45 +159,44 @@ function toggleCarrito() {
     carritoContainer.style.transform = 'translateX(100%)';
   }
 }
+// Funcion para vaciar el carrito en su totalidad //
 function vaciarCarrito() {
   carrito.length = 0;
   actualizarCarrito();
 }
 
-// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
   renderizarProductos();
   actualizarCarrito();
 });
-
+// Fin de codigo para el carrito //
+// Codigo para el login y register //
 document.addEventListener('DOMContentLoaded', function () {
-  // Obtenemos los elementos del DOM
+  // Se obtienen los datos del DOM //
   const loginBtn = document.getElementById('loginBtn');
   const registerBtn = document.getElementById('registerBtn');
   const logoutBtn = document.getElementById('logoutBtn');
   const loginForm = document.getElementById('loginForm');
   const registerForm = document.getElementById('registerForm');
- 
-  // Ocultar el formulario de inicio de sesión, registro y el botón de cerrar sesión al cargar la página
+  // Se ocultan en principio los menus //
   loginForm.style.display = 'none';
   registerForm.style.display = 'none';
   logoutBtn.style.display = 'none';
 
-  // Mostrar el formulario de inicio de sesión al hacer clic en el botón "Iniciar Sesión"
+  // Mostrar el menu para loguearse al presionar el boton respectivo //
   loginBtn.addEventListener('click', function () {
     loginForm.style.display = 'flex';
     registerForm.style.display = 'none';
   });
 
-  // Mostrar el formulario de registro al hacer clic en el botón "Registrarse"
+  // Mostrar el menu para registrarse al presionar el boton respectivo //
   registerBtn.addEventListener('click', function () {
     loginForm.style.display = 'none';
     registerForm.style.display = 'flex';
   });
 
-  // Lógica de cierre de sesión al hacer clic en el botón "Cerrar Sesión"
+  // Codigo para el cierre de sesion al pulsar el boton respectivo //
   logoutBtn.addEventListener('click', function () {
-    // Aquí puedes agregar la lógica real para cerrar sesión (limpiar cookies, etc.)
     alert('Sesión cerrada');
     logoutBtn.style.display = 'none';
     loginBtn.style.display = 'flex';
@@ -204,17 +204,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('bienvenida').style.display = 'none';
   });
 });
-
+//Funcion para ocultar los menus al cerrarlos //
 function cerrarMenus() {
   document.getElementById('loginForm').style.display = 'none';
   document.getElementById('registerForm').style.display = 'none';
 }
-
+// Codigo para evitar que se pueda enviar el formulario vacio //
 document.getElementById('registerForm').addEventListener('submit', async function (event) {
-  event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+  event.preventDefault(); // Evita que se pueda enviar vacio //
 
   try {
-    // Realizar la petición AJAX para enviar el formulario
+    // Fetch API solicitada en la consigna, para el registro //
     const response = await fetch('/register', {
       method: 'POST',
       headers: {
@@ -227,10 +227,10 @@ document.getElementById('registerForm').addEventListener('submit', async functio
       }),
     });
 
-    // Verificar la respuesta del servidor
+    // Verificar la respuesta del servidor //
     const data = await response.json();
     if (response.ok) {
-      // Si la respuesta es exitosa, mostrar un simple alert y cambiar la interfaz
+      // Si la respuesta es exitosa, muestra el respectivo alert, caso contrario muestra el otro alert //
       alert('Registro exitoso');
       document.getElementById('loginForm').style.display = 'none';
       document.getElementById('registerForm').style.display = 'none';
@@ -238,9 +238,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
       document.getElementById('loginBtn').style.display = 'none';
       document.getElementById('registerBtn').style.display = 'none';
     } else {
-      // Mostrar el mensaje de error en un alert
       alert(data.error);
-      // También puedes manejar más lógica aquí según tus necesidades
     }
   } catch (error) {
     console.error('Error al procesar la solicitud:', error);
@@ -251,7 +249,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
   event.preventDefault();
 
   try {
-    // Realizar la petición AJAX para iniciar sesión
+    // Fetch API solicitada en la consigna, para el login //
     const response = await fetch('/login', {
       method: 'POST',
       headers: {
@@ -263,10 +261,10 @@ document.getElementById('loginForm').addEventListener('submit', async function (
       }),
     });
 
-    // Verificar la respuesta del servidor
+    // Verificar la respuesta del servidor //
     const data = await response.json();
     if (response.ok) {
-      // Si la respuesta es exitosa, mostrar un simple alert y cambiar la interfaz
+      // Si la respuesta es exitosa, muestra el respectivo alert, caso contrario muestra el otro alert //
       alert(data.message);
       document.getElementById('loginForm').style.display = 'none';
       document.getElementById('registerForm').style.display = 'none';
@@ -274,13 +272,11 @@ document.getElementById('loginForm').addEventListener('submit', async function (
       document.getElementById('loginBtn').style.display = 'none';
       document.getElementById('registerBtn').style.display = 'none';
 
-      // Nuevo: Mostrar el mensaje de bienvenida
+      // Muestra el mensaje de bienvenida al loguearse //
       document.getElementById('bienvenida').innerText = `¡Bienvenido, ${data.username}!`;
       document.getElementById('bienvenida').style.display = 'block';
     } else {
-      // Mostrar el mensaje de error en un alert
       alert(data.error);
-      // También puedes manejar más lógica aquí según tus necesidades
     }
   } catch (error) {
     console.error('Error al procesar la solicitud:', error);
@@ -288,7 +284,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Obtenemos los elementos del DOM
+  // Obtenemos los elementos del DOM //
   const loginBtn = document.getElementById('loginBtn');
   const registerBtn = document.getElementById('registerBtn');
   const logoutBtn = document.getElementById('logoutBtn');
@@ -296,64 +292,32 @@ document.addEventListener('DOMContentLoaded', function () {
   const registerForm = document.getElementById('registerForm');
   const bienvenida = document.getElementById('bienvenida');
 
-  // Ocultar el formulario de inicio de sesión, registro y el botón de cerrar sesión al cargar la página
+  // Ocultar el formulario de inicio de sesión, registro y el botón de cerrar sesión al cargar la página //
   loginForm.style.display = 'none';
   registerForm.style.display = 'none';
   logoutBtn.style.display = 'none';
 
-  // Mostrar el formulario de inicio de sesión al hacer clic en el botón "Iniciar Sesión"
+  // Mostrar el formulario de inicio de sesión al hacer clic en el botón //
   loginBtn.addEventListener('click', function () {
     loginForm.style.display = 'flex';
     registerForm.style.display = 'none';
   });
 
-  // Mostrar el formulario de registro al hacer clic en el botón "Registrarse"
+  // Mostrar el formulario de registro al hacer clic en el botón //
   registerBtn.addEventListener('click', function () {
     loginForm.style.display = 'none';
     registerForm.style.display = 'flex';
   });
 
-  // Mostrar elementos según la sesión activa
+  // Mostrar elementos según la sesión activa //
   if (bienvenida.innerText !== '') {
     logoutBtn.style.display = 'flex';
     loginBtn.style.display = 'none';
     registerBtn.style.display = 'none';
   }
 });
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  const loginBtn = document.getElementById('loginBtn');
-  const registerBtn = document.getElementById('registerBtn');
-  const logoutBtn = document.getElementById('logoutBtn');
-  const loginForm = document.getElementById('loginForm');
-  const registerForm = document.getElementById('registerForm');
-  const bienvenida = document.getElementById('bienvenida');
-
-  loginForm.style.display = 'none';
-  registerForm.style.display = 'none';
-  logoutBtn.style.display = 'none';
-
-  loginBtn.addEventListener('click', function () {
-    loginForm.style.display = 'flex';
-    registerForm.style.display = 'none';
-  });
-
-  registerBtn.addEventListener('click', function () {
-    loginForm.style.display = 'none';
-    registerForm.style.display = 'flex';
-  });
-
-  // Mostrar elementos según la sesión activa
-  if (document.cookie.includes('connect.sid')) {
-    logoutBtn.style.display = 'flex';
-    loginBtn.style.display = 'none';
-    registerBtn.style.display = 'none';
-  }
-});
-
 logoutBtn.addEventListener('click', function () {
-  // Realizar una petición al servidor para cerrar sesión
+  // Realizar una petición al servidor para cerrar sesión  //
   fetch('/logout', { method: 'GET' })
     .then(response => {
       if (response.ok) {
@@ -363,41 +327,36 @@ logoutBtn.addEventListener('click', function () {
         registerBtn.style.display = 'flex';
         bienvenida.style.display = 'none';
       } else {
-        // Manejar errores de cerrar sesión
         console.error('Error al cerrar sesión:', response.status);
-        // Puedes mostrar un mensaje de error al usuario si lo deseas
       }
     })
     .catch(error => console.error('Error al cerrar sesión:', error));
 });
 
-// Almacenar en localStorage
+// Almacenar en localStorage //
 localStorage.setItem('sesion', 'informacion_de_sesion');
 
-// Recuperar desde localStorage
+// Recuperar desde localStorage //
 const informacionDeSesion = localStorage.getItem('sesion');
 
 logoutBtn.addEventListener('click', function () {
-  // Confirmar la intención de cerrar sesión
+  // Confirmar la intención de cerrar sesión //
   const confirmLogout = window.confirm('¿Estás seguro de que deseas cerrar sesión?');
 
   if (confirmLogout) {
-      // Realizar una petición al servidor para cerrar sesión utilizando fetch
-      fetch('/logout', { method: 'GET' })
-          .then(response => {
-              if (response.ok) {
-                  // La sesión se cerró con éxito
-                  logoutBtn.style.display = 'none';
-                  loginBtn.style.display = 'flex';
-                  registerBtn.style.display = 'flex';
-                  bienvenida.style.display = 'none';
-              } else {
-                  // Manejar errores de cerrar sesión
-                  console.error('Error al cerrar sesión:', response.status);
-                  // Puedes mostrar un mensaje de error al usuario si lo deseas
-              }
-          })
-          .catch(error => console.error('Error al cerrar sesión:', error));
+    fetch('/logout', { method: 'GET' })
+      .then(response => {
+        if (response.ok) {
+          logoutBtn.style.display = 'none';
+          loginBtn.style.display = 'flex';
+          registerBtn.style.display = 'flex';
+          bienvenida.style.display = 'none';
+        } else {
+          // Manejar errores de cerrar sesión //
+          console.error('Error al cerrar sesión:', response.status);
+        }
+      })
+      .catch(error => console.error('Error al cerrar sesión:', error));
   }
 });
 document.addEventListener('DOMContentLoaded', function () {
@@ -405,9 +364,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   formSubidaProducto.addEventListener('submit', async function (event) {
     event.preventDefault();
-
+// subida de archivos solicitada en la conssigna con Multer //
     try {
-      // Realizar la petición AJAX para subir la imagen
       const formData = new FormData(formSubidaProducto);
 
       const response = await fetch('/subidas-producto', {
@@ -417,10 +375,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Verificar la respuesta del servidor
       if (response.ok) {
-        // Si la respuesta es exitosa, mostrar un mensaje o realizar otras acciones
+        // Si la respuesta es exitosa, mostrar un alert de exito, caso contrario, el de error //
         alert('Imagen subida exitosamente');
       } else {
-        // Mostrar el mensaje de error en un alert
         alert('Error al subir la imagen');
       }
     } catch (error) {

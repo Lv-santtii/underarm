@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-//esquema solicitado en la consigna
+//esquema solicitado en la consigna //
 const usuarioSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
   password: { type: String, required: true },
@@ -21,7 +21,7 @@ usuarioSchema.pre('save', async function (next) {
 
   return next();
 });
-//modelo solicitado en la consigna
+//modelo solicitado en la consigna //
 const Usuario = mongoose.model('Usuario', usuarioSchema);
 
 module.exports = Usuario;

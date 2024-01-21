@@ -1,4 +1,4 @@
-// Controlador
+// Controlador // 
 
 module.exports = {
   getView: (req, res) => {

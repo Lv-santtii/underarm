@@ -1,7 +1,7 @@
 //TESTING que comprueba que la ruta principal ("/") devuelve el resultado que se espera //
 
 const request = require('supertest');
-const { app, server } = require('../../app'); // Ajusta la ruta según tu estructura de carpetas
+const { app, server } = require('../../app'); 
 
 beforeAll((done) => {
   done();

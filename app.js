@@ -1,3 +1,4 @@
+// Declaro las const necesarias para el codigo //
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -12,7 +13,7 @@ const { z } = require('zod');
 
 const app = express();
 const server = http.createServer(app);
-const port = process.env.PORT || 8080; // Utiliza el puerto proporcionado por el entorno o el 3000 si no está definido
+const port = process.env.PORT || 3000;
 
 // Llamada al middleware que se encarga de avisar por consola cuando hay una entrada a uno de los HTML //
 app.use(authMiddleware);
@@ -23,8 +24,7 @@ app.use(bodyParser.json());
 app.use(session({
   secret: 'clave123',
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false }, // Ajusta según tus necesidades de seguridad
+  saveUninitialized: true
 }));
 
 // Url para conectarse a la Base de datos de Mongo //
@@ -65,7 +65,7 @@ app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
     const user = await Usuario.findOne({ username });
-
+// Mensaje de error al ingresar datos incorrectos //
     if (!user) {
       return res.status(401).json({ error: 'Credenciales incorrectas' });
     }
@@ -73,7 +73,7 @@ app.post('/login', async (req, res) => {
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (passwordMatch) {
-      // Guardar el usuario en la sesión
+      // Guardar el usuario en la sesión //
       req.session.user = user;
       res.status(200).json({ message: 'Inicio de sesión exitoso', username: user.username });
     } else {
@@ -85,21 +85,21 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Configuración de Multer para la subida de imágenes de productos
+// Configuracion de Multer para la subida de imágenes de productos que (en este caso) la comunidad solicitaria agregar //
 const storageProductos = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'subidas/productos/'); // Directorio donde se almacenarán las imágenes de productos
+    cb(null, 'subidas/productos/'); // Carpeta en la cual se guardaran las imagenes subidas //
   },
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
-    cb(null, Date.now() + ext); // Nombre del archivo (timestamp + extensión original)
+    cb(null, Date.now() + ext); // Nombre del archivo //
   },
 });
 
 const subidasProductos = multer({
   storage: storageProductos,
   fileFilter: (req, file, cb) => {
-    // Filtrar archivos para asegurarse de que solo sean imágenes
+    // Filtrar archivos para asegurarse de que solo sean imágenes y no permitir otra cosa //
     const allowedMimetypes = ['image/jpeg', 'image/png', 'image/gif'];
     if (allowedMimetypes.includes(file.mimetype)) {
       cb(null, true);
@@ -109,42 +109,35 @@ const subidasProductos = multer({
   },
 });
 
-// Ruta para manejar la subida de imágenes de productos
+// Ruta para manejar la subida de imágenes de productos //
 app.post('/subidas-producto', subidasProductos.single('imagenProducto'), (req, res) => {
   try {
-    // Validar la existencia de la imagen en la solicitud
+    // Validacion de que se haya eleigdo una imagen //
     if (!req.file) {
       return res.status(400).json({ error: 'Ninguna imagen seleccionada' });
     }
 
-    // Validar los datos antes de procesarlos
+    // Validar los datos antes de seguir con el proceso //
     const datosValidos = productoSchema.parse({
       imagenProducto: req.file,
-      // Agrega más campos aquí según tus necesidades
     });
-
-    // Resto del código para procesar la imagen según tus necesidades
-    // ...
-
+// Mensaje al recibir, validar y almacenar de manera corretca la imagen, o de lo contrario, el error se ejecuta //
     res.status(200).json({ message: 'Imagen de producto subida exitosamente' });
   } catch (error) {
     res.status(400).json({ error: error.errors || error.message });
   }
 });
-
+// Utilizacion de ZOD //
 const productoSchema = z.object({
   imagenProducto: z.object({
-    fieldname: z.string(),
     originalname: z.string(),
-    encoding: z.string(),
     mimetype: z.string(),
     destination: z.string(),
     filename: z.string(),
-    path: z.string(),
     size: z.number(),
   }),
 });
-
+// Ejecucuion del servidor //
 app.listen(port, () => {
   console.log(`Servidor ON en el puerto ${port}`);
 });
