@@ -567,7 +567,6 @@ button:hover {
 }
 
 
-/* Agrega estos estilos al final de tu CSS */
 #carrito {
     position: fixed;
     top: 0;
@@ -698,14 +697,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw; /* Puedes ajustar esto según sea necesario */
+    width: 100vw; 
 }
 
 .top {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background-color: white; /* Agregado para ajustar el fondo del encabezado */
+    background-color: white;
 }
 
 .imgprincipal{
@@ -741,7 +740,7 @@ html {
     list-style: none;
 }
 
-#lista-carrito button { /* Puedes personalizar el color de fondo según tu diseño */
+#lista-carrito button { 
     color: white;
     border: none;
     padding: 5px 10px;

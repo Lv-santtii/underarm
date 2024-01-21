@@ -91,13 +91,9 @@ a {
 
 .card {
     border: 1px solid #c2bebe;
-    /* Borde básico */
     border-radius: 8px;
-    /* Bordes redondeados */
     overflow: hidden;
-    /* Para que los bordes redondeados se apliquen correctamente */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
     transition: 1s ease;
     background-color: #f7f2f2;
     height: 36em;
@@ -493,20 +489,12 @@ button {
     right: 0;
     bottom: 0;
     width: 300px;
-    /* Ajusta el ancho según sea necesario */
     background-color: white;
-    /* Ajusta el color de fondo según sea necesario */
     z-index: 1000;
-    /* Asegura que el carrito aparezca encima de otros elementos */
     overflow-y: auto;
-    /* Agrega desplazamiento vertical si es necesario */
     border-left: 1px solid #ddd;
-    /* Línea divisoria para mayor claridad */
     padding: 20px;
-    /* Ajusta el relleno según sea necesario */
 }
-
-/* Agrega estos estilos al final de tu CSS */
 #carrito {
     position: fixed;
     top: 0;
@@ -619,7 +607,7 @@ button {
     list-style: none;
 }
 
-#lista-carrito button { /* Puedes personalizar el color de fondo según tu diseño */
+#lista-carrito button {
     color: white;
     border: none;
     padding: 5px 10px;
