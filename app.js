@@ -13,7 +13,7 @@ const { z } = require('zod');
 
 const app = express();
 const server = http.createServer(app);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 // Llamada al middleware que se encarga de avisar por consola cuando hay una entrada a uno de los HTML //
 app.use(authMiddleware);
