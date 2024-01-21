@@ -1,6 +1,6 @@
 1- Clonar el repositorio en VS code : git clone https://github.com/Lv-santtii/APPGlobal.git
 2- Abrir la carpeta creada en la ruta especificada en VS code
-3- Colocar npm start en la terminal
+3- Colocar npm install para instalar todas las dependencias y luego npm start en la terminal
 4- al abrirse, entrar al local host 8080 en el navegador. (http://localhost:8080/index.html#)
 
 Adicional: Para importar y revisar la base de datos, colocar en la terminal : mongodump --uri="mongodb+srv://santi2006:Santi2006@cluster0.0grnbd5.mongodb.net/?retryWrites=true&w=majority"
