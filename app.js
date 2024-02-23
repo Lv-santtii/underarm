@@ -31,6 +31,7 @@ app.use(session({
 mongoose.connect('mongodb+srv://santi2006:Santi2006@cluster0.0grnbd5.mongodb.net/?retryWrites=true&w=majority');
 // Conexion a los archivos estaticos para que se vea correctamente //
 app.use(express.static(path.join(__dirname, 'app', 'views')));
+app.use(express.static('app/views/public'));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'app', 'views', 'index.html'));
