@@ -228,13 +228,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     });
 
     // Verificar la respuesta del servidor //
-    try {
-      const data = await response.json();
-      // Aquí continuar con el procesamiento de los datos
-    } catch (error) {
-      console.error('Error al procesar la respuesta JSON:', error);
-      // Manejar el error de alguna manera, como mostrar un mensaje de error al usuario
-    }
+    const data = await response.json();
     if (response.ok) {
       // Si la respuesta es exitosa, muestra el respectivo alert, caso contrario muestra el otro alert //
       alert('Registro exitoso');

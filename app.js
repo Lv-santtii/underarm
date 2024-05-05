@@ -13,7 +13,7 @@ const { z } = require('zod');
 
 const app = express();
 const server = http.createServer(app);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3020;
 
 // Llamada al middleware que se encarga de avisar por consola cuando hay una entrada a uno de los HTML //
 app.use(authMiddleware);
@@ -31,7 +31,7 @@ app.use(session({
 mongoose.connect('mongodb+srv://santi2006:Santi2006@cluster0.0grnbd5.mongodb.net/?retryWrites=true&w=majority');
 // Conexion a los archivos estaticos para que se vea correctamente //
 app.use(express.static(path.join(__dirname, 'app', 'views')));
-app.use(express.static('./app/views/public'));
+app.use(express.static('app/views/public'));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'app', 'views', 'index.html'));
