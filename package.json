@@ -1,7 +1,4 @@
-
-
 {
-  
   "name": "expres",
   "version": "1.0.0",
   "description": "",
@@ -17,17 +14,14 @@
     "supertest": "^6.3.4",
     "zod": "^3.22.4"
   },
-"scripts": {
-  "start": "node app.js",
-  "build": "echo 'No build necessary'",
-  "test": "jest"
-}
+  "scripts": {
+    "start": "node app.js",
+    "build": "echo 'No build necessary'",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"
-    
   }
-  
 }
