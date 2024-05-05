@@ -10,6 +10,7 @@ const Usuario = require('./app/models/usuario');
 const authMiddleware = require('./app/middlewares/authMiddleware');
 const multer = require('multer');
 const { z } = require('zod');
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
@@ -19,7 +20,7 @@ const port = process.env.PORT || 3020;
 app.use(authMiddleware);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(cors());
 // Configuracion de las sesiones //
 app.use(session({
   secret: 'clave123',
