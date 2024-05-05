@@ -215,17 +215,17 @@ document.getElementById('registerForm').addEventListener('submit', async functio
 
   try {
     // Fetch API solicitada en la consigna, para el registro //
-    const response = await fetch('/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        newUsername: document.getElementById('newUsername').value,
-        newPassword: document.getElementById('newPassword').value,
-        email: document.getElementById('email').value,
-      }),
-    });
+    const response = await fetch('https://nueva-carpeta-4-4ksi35gs8-santino-sciarrillos-projects.vercel.app/register', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    newUsername: document.getElementById('newUsername').value,
+    newPassword: document.getElementById('newPassword').value,
+    email: document.getElementById('email').value,
+  }),
+});
 
     // Verificar la respuesta del servidor //
     const data = await response.json();
@@ -250,16 +250,16 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
   try {
     // Fetch API solicitada en la consigna, para el login //
-    const response = await fetch('/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: document.getElementById('username').value,
-        password: document.getElementById('password').value,
-      }),
-    });
+    const response = await fetch('https://nueva-carpeta-4-4ksi35gs8-santino-sciarrillos-projects.vercel.app/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    username: document.getElementById('username').value,
+    password: document.getElementById('password').value,
+  }),
+});
 
     // Verificar la respuesta del servidor //
     const data = await response.json();
