@@ -7,6 +7,11 @@
     {
       "src": "/(.*)",
       "dest": "/app/views/$1"
+    },
+    {
+      "src": "/api/(login|register)", 
+      "methods": ["POST"],
+      "dest": "/api/$1"
     }
   ]
 }
