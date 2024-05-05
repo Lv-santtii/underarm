@@ -1,4 +1,3 @@
 [build]
   command = "npm start"
-  functions = "functions"  # si usas funciones serverless
   publish = "app/views/public"
