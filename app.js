@@ -14,7 +14,7 @@ const { z } = require('zod');
 const app = express();
 const server = http.createServer(app);
 const port = process.env.PORT || 3020;
-
+const router = require('./app/routes/index');
 // Llamada al middleware que se encarga de avisar por consola cuando hay una entrada a uno de los HTML //
 app.use(authMiddleware);
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,7 +26,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-
+app.use(router);
 // Url para conectarse a la Base de datos de Mongo //
 mongoose.connect('mongodb+srv://santi2006:Santi2006@cluster0.0grnbd5.mongodb.net/?retryWrites=true&w=majority');
 // Conexion a los archivos estaticos para que se vea correctamente //
