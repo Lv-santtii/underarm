@@ -17,9 +17,11 @@
     "supertest": "^6.3.4",
     "zod": "^3.22.4"
   },
-  "scripts": {
-    "start": "node app.js",
-    "test": "jest"
+"scripts": {
+  "start": "node app.js",
+  "build": "echo 'No build necessary'",
+  "test": "jest"
+}
   },
   "author": "",
   "license": "ISC",
