@@ -988,3 +988,18 @@ input{
       max-width: 100%;
     }
   }
+
+  .card{
+    height: fit-content;
+    margin: 2em 0;
+  }
+
+  .mid{
+    margin-top: 2em;
+  }
+
+  @media screen and (max-width: 410px) {
+    .botoncards {
+      width: 5em;
+    }
+  }
