@@ -47,7 +47,8 @@ router.post('/register', async (req, res) => {
   });
 
   // Ruta para cerrar sesión //
-router.get('/logout', (req, res) => {
+// Ruta para cerrar sesión //
+router.post('/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) {
       console.error('Error al cerrar sesión:', err);
@@ -57,6 +58,7 @@ router.get('/logout', (req, res) => {
     }
   });
 });
+
 
   
   module.exports = router;

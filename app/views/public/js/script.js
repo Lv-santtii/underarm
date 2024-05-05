@@ -340,24 +340,20 @@ localStorage.setItem('sesion', 'informacion_de_sesion');
 const informacionDeSesion = localStorage.getItem('sesion');
 
 logoutBtn.addEventListener('click', function () {
-  // Confirmar la intención de cerrar sesión //
-  const confirmLogout = window.confirm('¿Estás seguro de que deseas cerrar sesión?');
-
-  if (confirmLogout) {
-    fetch('/logout', { method: 'GET' })
-      .then(response => {
-        if (response.ok) {
-          logoutBtn.style.display = 'none';
-          loginBtn.style.display = 'flex';
-          registerBtn.style.display = 'flex';
-          bienvenida.style.display = 'none';
-        } else {
-          // Manejar errores de cerrar sesión //
-          console.error('Error al cerrar sesión:', response.status);
-        }
-      })
-      .catch(error => console.error('Error al cerrar sesión:', error));
-  }
+  // Realizar una petición al servidor para cerrar sesión  //
+  fetch('/logout', { method: 'POST' }) // Cambia GET a POST
+    .then(response => {
+      if (response.ok) {
+        // La sesión se cerró con éxito
+        logoutBtn.style.display = 'none';
+        loginBtn.style.display = 'flex';
+        registerBtn.style.display = 'flex';
+        bienvenida.style.display = 'none';
+      } else {
+        console.error('Error al cerrar sesión:', response.status);
+      }
+    })
+    .catch(error => console.error('Error al cerrar sesión:', error));
 });
 document.addEventListener('DOMContentLoaded', function () {
   const formSubidaProducto = document.getElementById('formSubidaProducto');

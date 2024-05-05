@@ -1,12 +1,12 @@
 {
   "routes": [
     {
-      "src": "/public/(.*)",
+      "src": "/public/(.*)", 
       "dest": "/app/views/public/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/app/views/$1" 
+      "dest": "/app/views/$1"
     }
   ]
 }
